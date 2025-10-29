@@ -1,7 +1,12 @@
+import DashboardPage from '../po/pages/dashboard.page.js';
+
+const dashboardPage = new DashboardPage();
+
 describe('doctor page', () => {
     beforeEach(async() => {
-        await browser.url('https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard');
-    })
+        await dashboardPage.open()
+        //await browser.url('https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard');
+    });
 
     it('check page title', async() =>{
         /* 
