@@ -27,7 +27,8 @@ describe('doctor page', () => {
 
 
         // click on doctors item in the side menu
-        await $('[routerlink="/doctors"]').click();
+        //await $('[routerlink="/doctors"]').click();
+        await dashboardPage.sideMenu.item('doctors').click();
 
         // click on add new doctor btn
         await $('.specialization-types button.e-control').click();
