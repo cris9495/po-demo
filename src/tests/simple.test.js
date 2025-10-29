@@ -5,7 +5,7 @@ const dashboardPage = new DashboardPage();
 describe('doctor page', () => {
     beforeEach(async() => {
         await dashboardPage.open()
-        //await browser.url('https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard');
+        
     });
 
     it('check page title', async() =>{
