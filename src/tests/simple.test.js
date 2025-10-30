@@ -1,9 +1,11 @@
+import AddDoctorComponent from '../po/components/doctors/add-doctor.component.js';
 import DashboardPage from '../po/pages/dashboard.page.js';
 import DoctorsPage from '../po/pages/doctors.page.js';
 
 
 const dashboardPage = new DashboardPage();
 const doctorsPage = new DoctorsPage();
+const doctorComponent = new AddDoctorComponent();
 
 describe('doctor page', () => {
     beforeEach(async() => {
@@ -51,12 +53,14 @@ describe('doctor page', () => {
         await $('.new-doctor-dialog').waitForDisplayed();
 
         // Fill out the form fields
-        await $('[name="Name"]').setValue('John Doe');
-        await $('#DoctorMobile').setValue('1111111111');
+        await doctorComponent.input('name').setValue('John Doe');
+        await doctorComponent.input('name').setValue('John Doe');
+        await doctorComponent.input('phone').setValue('1111111111');
+        await doctorComponent.input('email').setValue('test@test.com');
+        await doctorComponent.input('education').setValue('Basic');
+        await doctorComponent.input('designation').setValue('Test');
+
         
-        await $('[name="Email"]').setValue('test@test.com');
-        await $('[name="Education"]').setValue('Basic');
-        await $('[name="Designation"]').setValue('Test');
 
         // Click the Save/Primary button in the footer
         await $('.e-footer-content button.e-primary').click();
