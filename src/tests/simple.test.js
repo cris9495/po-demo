@@ -1,6 +1,9 @@
 import DashboardPage from '../po/pages/dashboard.page.js';
+import DoctorsPage from '../po/pages/doctors.page.js';
+
 
 const dashboardPage = new DashboardPage();
+const doctorsPage = new DoctorsPage();
 
 describe('doctor page', () => {
     beforeEach(async() => {
@@ -23,8 +26,19 @@ describe('doctor page', () => {
         
     });
 
-    it('Add a new doctor', async () => {
+    it('Open modal window for adding a new doctor', async () => {
+    // click on doctors item in the side menu
+    await dashboardPage.sideMenu.item('doctors').click();
+    
+    // click on add new doctor btn
+    await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
+    
+    // check that a modal window is displayed
+    //await expect($('.new-doctor-dialog')).toBeDisplayed();
+    await expect(doctorsPage.addDoctorModal.rootEL).toBeDisplayed();
+    });
 
+    it('Add a new doctor', async () => {
 
         // click on doctors item in the side menu
         //await $('[routerlink="/doctors"]').click();

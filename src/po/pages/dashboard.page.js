@@ -1,15 +1,14 @@
-import SideMenuComponent from '../components/sidemenu.component.js';
+import SideMenuComponent from '../components/common/sidemenu.component.js';
+import BasePage from './base.page.js';
 
 
-
-class DashboardPage {
+class DashboardPage extends BasePage{
     constructor(){
+        super('/showcase/angular/appointmentplanner/#/dashboard')
         this.sideMenu = new SideMenuComponent()
 
     }
-    async open() {
-        await browser.url('https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard');
-    }
+   
 }
 
 //module.exports = DashboardPage; //no funciona de este modo como en tutorial
