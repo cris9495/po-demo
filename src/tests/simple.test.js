@@ -63,7 +63,7 @@ describe('doctor page', () => {
         
 
         // Click the Save/Primary button in the footer
-        await $('.e-footer-content button.e-primary').click();
+        await doctorComponent.saveBtn.click();
 
         // Assert that the modal is no longer displayed
         await expect($('.new-doctor-dialog')).not.toBeDisplayed();
@@ -78,7 +78,7 @@ describe('doctor page', () => {
         await $('[routerlink="/doctors"]').click();
         await $('.specialization-types button.e-control').click();
         await $('.new-doctor-dialog').waitForDisplayed();
-        await $('.new-doctor-dialog .e-dlg-closeicon-btn').click();
+        await doctorComponent.closeBtn.click();
         await expect($('.new-doctor-dialog')).not.toBeDisplayed();
         });
 })

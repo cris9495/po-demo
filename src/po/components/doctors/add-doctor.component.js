@@ -6,6 +6,14 @@ class AddDoctorComponent extends BaseComponent{
         super('.new-doctor-dialog');
     }
 
+    get saveBtn(){
+        return this.rootEL.$('.e-footer-content button.e-primary')
+    }
+
+    get closeBtn(){
+        return this.rootEL.$('.e-dlg-closeicon-btn');
+    }
+
     /**
      * Finds a specific input field within the Add Doctor modal.
      * @param {string} name - Must be one of 'name', 'phone', 'email', 'education', or 'designation'.
